@@ -6,6 +6,10 @@ pipeline: supervised_embeddings
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
+  - name: FallbackPolicy
+    nlu_threshold: 0.8
+    core_threshold: 0.7
+    fallback_action_name: action_default_fallback
   - name: MemoizationPolicy
   - name: KerasPolicy
-  - name: MappingPolicy
+  - name: MappingPolicy 
